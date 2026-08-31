@@ -1,7 +1,6 @@
 package com.labanta.servidorlocal.security;
 
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,15 +16,7 @@ public class JwtService {
 
     public JwtService(@Value("${jwt.secret}") String secret) {
 
-        if (secret == null || secret.length() < 32) {
-            throw new IllegalArgumentException(
-                    "JWT_SECRET deve ter pelo menos 32 caracteres."
-            );
-        }
-
-        this.chaveSecreta = Keys.hmacShaKeyFor(
-                secret.getBytes(StandardCharsets.UTF_8)
-        );
+        this.chaveSecreta = Keys.hmacShaKeyFor(secret.getBytes());
     }
 
     public String gerarToken(String username) {
