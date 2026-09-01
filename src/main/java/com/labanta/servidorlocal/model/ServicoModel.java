@@ -74,8 +74,7 @@ public class ServicoModel {
         return estaAtivo;
     }
 
-    public void setPrecoComDesconto(
-            Double precoComDesconto) {
+    public void setPrecoComDesconto(Double precoComDesconto) {  this.precoComDesconto = precoComDesconto;
     }
 
     public Double getPrecoComDesconto() {
