@@ -39,6 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             //ignorar o token vazios ou "undefined" (frontend mal configurado)
             if(token.isEmpty() || token.equals("undefined")) {
                 filterChain.doFilter(request, response);
+                return;
             }
 
             try {
