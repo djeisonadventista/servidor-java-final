@@ -57,7 +57,7 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of("http://localhost:3000", "http://labanta.cv", "http://localhost:5173", "http://localhost:5174", "https://servidor-local-java-front1.vercel.app"));
         config.setAllowedMethods(List.of("GET", "POST","PUT","DELETE", "OPTIONS"));
         config.setAllowCredentials(true);
-        config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
